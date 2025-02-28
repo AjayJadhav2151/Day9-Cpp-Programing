@@ -3,24 +3,25 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
-struct Book
+typedef struct Book
 {
 	int bookId;
 	char title[20];
 	double price;
-};
-void Display( struct Book BOOK) {
+}BOOK;
+void Display(BOOK b[]) {
 	for (int i = 0; i <= 5; i++) {
-		printf("%d %s %lf\n", BOOK.bookId, BOOK.title, BOOK.price);
+		printf("ID %d Title %s Price %lf\n", b[i].bookId, b[i].title, b[i].price);
 	}
 }
 int main() {
-	struct Book BOOK;
+	
+	BOOK a[5];
 	printf("Enter the 5 book deatils\n");
 	for (int i = 0; i <= 5; i++) {
-		scanf("%d%s%lf", &BOOK.bookId, &BOOK.title, &BOOK.price);
+		scanf("%d%s%lf", &a[i].bookId, &a[i].title, &a[i].price);
 	}
-	Display(BOOK);
+	Display(a);
 
 	return 0;
 }
