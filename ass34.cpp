@@ -17,5 +17,12 @@ int main() {
 
 	struct Book com = BOOK;
 	printf("Copying an entire structure to another.: %d %s %lf\n", com.bookId, com.title, com.price);
+
+	struct Book IT;
+	IT.bookId = BOOK.bookId;
+	strcpy(IT.title, BOOK.title);
+	IT.price = BOOK.price;
+	printf("On element by element basis: %d %s %lf\n", IT.bookId, IT.title, IT.price);
+
 	return 0;
 }
